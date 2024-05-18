@@ -98,4 +98,65 @@ public static class TestData
         };
         return bookedAppointments;
     }
+
+    ///////////  
+    public static List<BlockedTimeSlotModel> GetBlockedTimeSlotsByBarberexample1(int barberId, DateOnly date)
+    {
+        List<BlockedTimeSlotModel> bookedByBarber = new List<BlockedTimeSlotModel>()
+        {
+
+            new BlockedTimeSlotModel()
+            {
+                StartTime = new TimeOnly(13, 00),
+                EndTime = new TimeOnly(14, 00)
+            },
+
+            new BlockedTimeSlotModel()
+            {
+                StartTime = new TimeOnly(17, 00),
+                EndTime = new TimeOnly(18, 30)
+            }
+        };
+        return bookedByBarber;
+    }
+    public static List<BlockedTimeSlotModel> GetBlockedTimeSlotsByBarberexample2(int barberId, DateOnly date)
+    {
+        List<BlockedTimeSlotModel> bookedByBarber = new List<BlockedTimeSlotModel>()
+        {
+
+           new BlockedTimeSlotModel()
+            {
+                StartTime = new TimeOnly(12, 15),
+                EndTime = new TimeOnly(12, 45)
+            },
+            new BlockedTimeSlotModel()
+            {
+                StartTime = new TimeOnly(17, 00),
+                EndTime = new TimeOnly(18, 15)
+            }
+        };
+        return bookedByBarber;
+    }
+
+    public static List<BlockedTimeSlotModel> GetBlockedTimeSlotsByBarberexample3(int barberId, DateOnly date)
+    {
+        List<BlockedTimeSlotModel> bookedByBarber = new List<BlockedTimeSlotModel>()
+        {
+             new BlockedTimeSlotModel()
+            {
+                StartTime = new TimeOnly(15, 00),
+                EndTime = new TimeOnly(16, 00)
+            }
+        };
+        return bookedByBarber;
+    }
+
+    public static List<BlockedTimeSlotModel> GetBlockedTimeSlotsByBarberexample4(int barberId, DateOnly date)
+    {
+        List<BlockedTimeSlotModel> bookedByBarber = new List<BlockedTimeSlotModel>()
+        {
+
+        };
+        return bookedByBarber;
+    }
 }

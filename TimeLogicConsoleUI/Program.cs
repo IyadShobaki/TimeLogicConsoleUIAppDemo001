@@ -14,8 +14,8 @@ var barberStartTime = new TimeOnly(10, 00);
 var barberEndTime = new TimeOnly(19, 00);
 var lunchStartTime = new TimeOnly(14, 00);
 var lunchEndTime = new TimeOnly(15, 00);
-var blockByBarberStartTime = new TimeOnly(16, 00);
-var blockByBarberEndTime = new TimeOnly(19, 00);
+//var blockByBarberStartTime = new TimeOnly(16, 00);
+//var blockByBarberEndTime = new TimeOnly(19, 00);
 
 
 Console.WriteLine("Booked Appointments: ");
@@ -27,11 +27,13 @@ foreach (var appointment in bookedListExample)
 Console.WriteLine("==========================================");
 
 Console.WriteLine("Available Appointments: ");
-var availbleList = Logic.GetAvailableList(bookedListExample, 15,
+var availbleList = Logic.GetAvailableList(bookedListExample, 30,
                                             barberStartTime, barberEndTime,
                                             lunchStartTime, lunchEndTime,
                                              //blockByBarberStartTime, blockByBarberEndTime);
-                                             null, null);
+                                             //null, null);
+                                             TestData.GetBlockedTimeSlotsByBarberexample1(1,
+                                                                                        new DateOnly(2024, 05, 20)));
 foreach (var appointment in availbleList)
 {
     Console.WriteLine($"{appointment.AppointmentStartTime} - {appointment.AppointmentEndTime}");

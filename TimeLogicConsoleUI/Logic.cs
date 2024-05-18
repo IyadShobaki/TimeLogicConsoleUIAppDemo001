@@ -9,8 +9,7 @@ public class Logic
                                             TimeOnly barberEndTime,
                                             TimeOnly lunchStartTime,
                                             TimeOnly lunchEndTime,
-                                            TimeOnly? blockByBarberStartTime,
-                                            TimeOnly? blockByBarberEndTime)
+                                            List<BlockedTimeSlotModel> blockedTimeSlots)
     {
 
         // Added fakely (not from the DB, so the logic can skip it)
@@ -22,12 +21,22 @@ public class Logic
         });
 
         // Added fakely (not from the DB, so the logic can skip it)
-        if (blockByBarberStartTime != null && blockByBarberEndTime != null)
+        /* if (blockByBarberStartTime != null && blockByBarberEndTime != null)
+         {
+             bookedList.Add(new AppointmentModel
+             {
+                 AppointmentStartTime = (TimeOnly)blockByBarberStartTime,
+                 AppointmentEndTime = (TimeOnly)blockByBarberEndTime
+             });
+         }*/
+
+        foreach (var time in blockedTimeSlots)
         {
+            Console.WriteLine($"Time blocked by barber: {time.StartTime} - {time.EndTime}");
             bookedList.Add(new AppointmentModel
             {
-                AppointmentStartTime = (TimeOnly)blockByBarberStartTime,
-                AppointmentEndTime = (TimeOnly)blockByBarberEndTime
+                AppointmentStartTime = time.StartTime,
+                AppointmentEndTime = time.EndTime
             });
         }
 
